@@ -1,0 +1,68 @@
+@startuml class
+
+UnionFind --> SquareBond
+UnionFind --> SquareSite
+UnionFind --> TriangularBond
+UnionFind --> TriangularSite
+
+class UnionFind {
+    int[] parent
+    int[] rank
+
+    int find()
+    void union()
+    Bool isSame()
+}
+
+
+
+class SquareBond {
+    int L
+    int size
+    double p
+    int virtualTop
+    int virtualBottom
+
+    void generateBonds()
+    int index()
+    bool isPercolated()
+}
+
+class SquareSite {
+    int L
+    int size
+    double p
+    int virtualTop
+    int virtualBottom
+    int[] isOpen
+
+    void initializeAndConnect()
+    int index()
+    bool isPercolated()
+}
+class TriangularBond {
+    int L
+    int size
+    double p
+    int virtualTop
+    int virtualBottom
+
+    void generateBonds()
+    int index()
+    bool isPercolated()
+}
+
+class TriangularSite {
+    int L
+    int size
+    double p
+    int virtualTop
+    int virtualBottom
+    int[] isOpen
+
+    void initializeAndConnect()
+    int index()
+    bool isPercolated()
+}
+
+@end
