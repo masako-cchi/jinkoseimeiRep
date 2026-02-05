@@ -1,0 +1,40 @@
+@startuml class
+
+class GeneticAlgorithm{
+    double mutationRate // 突然変異確率
+    int tournamentSize  // トーナメントサイズ
+    boolean elitism     // エリート保存
+
+    // コメントアウトで交叉戦略の切り替え
+    EdgeRecombinationCrossover crossOverStarategy   // エッジ組み換え交叉
+    OrderCrossover crossOverStarategy            // 順序交叉
+
+    List<Individual> evolve()   // 次世代の個体群を生成
+    Individual tournamentSelection()    // トーナメント選択
+}
+
+class Individual{
+    List<City> genome   // ゲノム
+    double distance // 総距離
+
+    Individual GenerateRandom() // ランダムな経路を生成
+    double getDistance()    // 総距離を計算
+    void mutateInversion()  // 突然変異（区間反転）
+    List<City> getGenome()
+    int getGenomeSize()
+    City getCity(int index)
+}
+
+
+class City{
+    int id
+    double x
+    double y
+
+    int getId()
+    double distanceTo()
+}
+
+
+
+@end
