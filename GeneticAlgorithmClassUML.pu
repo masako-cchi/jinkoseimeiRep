@@ -4,10 +4,7 @@ class GeneticAlgorithm{
     double mutationRate // 突然変異確率
     int tournamentSize  // トーナメントサイズ
     boolean elitism     // エリート保存
-
-    // コメントアウトで交叉戦略の切り替え
-    EdgeRecombinationCrossover crossOverStarategy   // エッジ組み換え交叉
-    OrderCrossover crossOverStarategy            // 順序交叉
+    OrderCrossover crossOverStarategy   // 交叉戦略
 
     List<Individual> evolve()   // 次世代の個体群を生成
     Individual tournamentSelection()    // トーナメント選択
